@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" media="all" href="styles.css" />
+  </head>
+  <body>
+    <div
+      class="flex items-center justify-center bg-gradient-to-r from-indigo-700 to-blue-500 w-full h-screen"
+    >
+    <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="absolute w-3/4 h-90% bg-white rounded-lg shadow-lg flex">
+        <!-- Primer div con fondo azul -->
+        <div class="w-1/2 flex items-center justify-center flex-col gap-5 bg-orange-500 rounded-l-lg" >
+          <div class="text-container" id="myName" >
+            <span class="animate-text font-extrabold text-6xl text-slate-700"
+              >Jhonatan Fritz</span
+            >
+          </div>
+
+          <div class="w-1/2" id="programer">
+            <img
+              src="designer-9c.png"
+              alt="Rocket"
+              class="h-full"
+            />
+          </div>
+          <div class="w-1/2 hidden" id="newLuffy">
+            <img
+              src="https://media.giphy.com/media/q8ld8Sk7WWyY0/giphy.gif"
+              alt="Rocket"
+              class="h-full"
+            />
+          </div>
+
+          <div class="text-container" id="myMessage">
+            <span
+              class="animate-text2 font-bold text-xl text-slate-700"
+              id="miElemento"
+              >Déjame un mensaje para ayudarte...</span
+            >
+          </div>
+          <div class="hidden" id="myMessagetwo">
+            <span
+              class="animate-text2 font-bold text-3xl text-slate-700"
+              id="miElemento"
+              >Hasta pronto...</span
+            >
+          </div>
+        </div>
+
+        <!-- Segundo div con fondo verde -->
+        <div class="w-1/2 h-full">
+          <!-- Formulario -->
+          <form id="miFormulario" class="p-10 overflow-hidden h-full">
+            <h2 class="text-slate-500 text-2xl mb-4 font-bold">
+              Formulario de contacto
+            </h2>
+            <div class="mb-4">
+              <label
+                class="block text-slate-500 text-sm font-semibold mb-2"
+                for="nombres"
+                >Nombres</label
+              >
+              <input
+                type="text"
+                id="nombres"
+                name="nombres"
+                class="w-full bg-gray-100 border-2 border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
+
+            <div class="mb-4">
+              <label
+                class="block text-slate-500 text-sm font-semibold mb-2"
+                for="email"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full bg-gray-100 border-2 border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
+
+            <div class="mb-4">
+              <label
+                class="block text-slate-500 text-sm font-semibold mb-2"
+                for="pais"
+                >País</label
+              >
+              <select
+                id="pais"
+                name="pais"
+                class="w-full bg-gray-100 border-2 border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500"
+                required
+              >
+                <option value="" disabled selected>Selecciona tu país</option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <label
+                class="block text-slate-500 text-sm font-semibold mb-2"
+                for="celular"
+                >Número de Celular</label
+              >
+              <input
+                type="tel"
+                id="celular"
+                name="celular"
+                class="w-full bg-gray-100 border-2 border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
+
+            <div class="mb-4">
+              <label
+                class="block text-slate-500 text-sm font-semibold mb-2"
+                for="mensaje"
+                >Mensaje</label
+              >
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                class="w-full bg-gray-100 border-2 border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 resize-none"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+
+            <div class="mb-4">
+              <label class="block text-slate-500 text-sm font-semibold mb-2">
+                <input type="checkbox" class="mr-2" required /> Acepto los
+                términos y condiciones
+              </label>
+            </div>
+
+            <div class="mt-6">
+              <button
+                type="submit"
+                id="enviarBtn"
+                class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-700"
+              >
+                Enviar
+              </button>
+            </div>
+          </form>
+          <!-- Div que se mostrará después de enviar el formulario -->
+          <div
+            id="resultado"
+            class="hidden h-full items-center justify-center flex-col gap-5 h-[100%] bg-red-500 p-4 text-white text-center rounded-r-lg"
+          >
+            <p class="text-2xl font-semibold">
+              Felicidades <span id="nombreMostrado"></span> tu mensaje ha sido
+              enviado correctamente...
+            </p>
+            <img
+              src="https://media4.giphy.com/media/12XMGIWtrHBl5e/giphy.gif?cid=ecf05e476h36562duhr5mdnvyvknmcfedj35mi21onc50uyi&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+              alt="Gif de gato"
+            />
+            <div
+              class="mt-6 flex gap-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline-blue active:bg-blue-700"
+              id="resetBtn"
+              onclick="Reload()"
+            >
+              <img
+                src="arrow-left-line.svg"
+                alt="Icono de regreso"
+                class="w-6 h-6"
+              />
+              <button type="submit">Volver al inicio</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Vinculanmos el JS -->
+    <script src="efects.js"></script>
+  </body>
+</html>
